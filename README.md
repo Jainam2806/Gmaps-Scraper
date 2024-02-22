@@ -23,7 +23,7 @@ git clone https://github.com/Jainam2806/Gmaps-Scraper.git
 
 Navigate to the repository directory:
 ```bash
-cd Gmaps-Scraper
+cd Gmaps-Scraper\webScrapper
 ```
 
 Run the script:
