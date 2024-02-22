@@ -35,6 +35,7 @@ Enter your search query when prompted.
 
 ## Functionality
 The script scrapes Google Maps for the given query and prints out the search results.
+
 Example:
 ```bash
 Search query: restaurants near me
