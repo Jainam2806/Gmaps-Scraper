@@ -1,7 +1,7 @@
 # Google Maps Scraper
 ## Description
 
-This Python script allows you to scrape Google Maps for a given query. It utilizes Selenium to interact with the Google Maps web interface.
+This script scrapes Google Maps for a user-provided query and retrieves information about the search results. It mimics user interactions on the Google Maps website to perform the search and extracts relevant information from the search results.
 
 ## Requirements
 
@@ -11,10 +11,6 @@ Ensure you have the following installed:
 - Selenium
 - Google Chrome
 
-You can install the necessary Python packages by running:
-```bash
-pip install -r requirements.txt
-```
 ## Usage
 Clone the repository:
 ```bash
@@ -23,7 +19,14 @@ git clone https://github.com/Jainam2806/Gmaps-Scraper.git
 
 Navigate to the repository directory:
 ```bash
-cd Gmaps-Scraper\webScrapper
+cd .\Gmaps-Scraper\
+git checkout version-1
+cd .\webScrapper\
+```
+
+You can install the necessary Python packages by running:
+```bash
+pip install -r requirements.txt
 ```
 
 Run the script:
@@ -36,9 +39,9 @@ Enter your search query when prompted.
 ## Functionality
 The script scrapes Google Maps for the given query and prints out the search results.
 
-Example:
+Search Query:
 ```bash
-Search query: restaurants near me
+Restaurants near me
 ```
 Output:
 ```bash

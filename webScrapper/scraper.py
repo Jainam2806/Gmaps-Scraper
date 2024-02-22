@@ -37,9 +37,9 @@ def scrape_google_maps(query):
         print("______________________________________________________________________________________________________")
         results.append(innertText)
     driver.quit()
-    return results
+    # return results
 
 query = input("Search Query: ")
 scrape_google_maps(query)
-results = scrape_google_maps(query)
-print(results)
+# results = scrape_google_maps(query)
+# print(results)
