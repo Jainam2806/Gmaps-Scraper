@@ -49,23 +49,23 @@ Output:
     1: {
         'shop_name': 'Honest', 
         'shop_address': 'Indian · White House Panchvati Circle, Chimanlal Girdharlal Rd', 
-        'shop_phone': None}, 
+        'shop_phone': 9999999999}, 
     2: {
         'shop_name': 'Chinese Wok - CG Road', 
         'shop_address': 'Chinese · Shop No.1, Ground Floor, Opp: Tomato Restaurant, Gold Leaf, Chimanlal Girdharlal Rd, near Maradia Plaza, near Associated Petrol Pump', 
-        'shop_phone': None}, 
+        'shop_phone': 9999999999}, 
     3: {
         'shop_name': 'Cafe Mocha', 
         'shop_address': 'Restaurant · 10, Vasantbaug society, Gulbai Tekra Rd, opp. IDBI Bank, near CA Circle', 
-        'shop_phone': None}, 
+        'shop_phone': 9999999999}, 
     4: {
         'shop_name': 'Hocco Eatery, Law Garden', 
         'shop_address': 'Restaurant · Ground floor, shri balaji alpha bazar law garden', 
-        'shop_phone': None}, 
+        'shop_phone': 9999999999}, 
     5: {
         'shop_name': 'The Great Kabab Factory', 
         'shop_address': 'Mughlai · Radisson Blu Hotel, Ambawadi, Panchavati Road, Ellisbridge', 
-        'shop_phone': None},
+        'shop_phone': 9999999999},
     ...
 }
 ```
