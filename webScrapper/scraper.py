@@ -20,7 +20,7 @@ def scrape_google_maps(query):
         time.sleep(3)
   
     results = []
-    for i in range(3,12,2):
+    for i in range(3,102,2):
         item = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{i}]')
         innertText = item.get_attribute('innerText')
         results.append(innertText)
