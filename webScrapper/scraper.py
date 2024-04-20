@@ -16,14 +16,20 @@ def scrape_google_maps(query):
     search_box.send_keys(Keys.ENTER)
     time.sleep(2)
     for _ in range(9):
-        driver.execute_script(f"""document.querySelector('[aria-label="Results for {query}"]').scrollTop = document.querySelector('[aria-label="Results for {query}"]').scrollHeight;""")
+        try:
+            driver.execute_script(f"""document.querySelector('[aria-label="Results for {query}"]').scrollTop = document.querySelector('[aria-label="Results for {query}"]').scrollHeight;""")
+        except:
+            return(scrape_google_maps(query))
         time.sleep(3)
   
     results = []
     for i in range(3,102,2):
-        item = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{i}]')
-        innertText = item.get_attribute('innerText')
-        results.append(innertText)
+        try:
+            item = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{i}]')
+            innertText = item.get_attribute('innerText')
+            results.append(innertText)
+        except:
+            continue
     driver.quit()
     return results
 
@@ -54,11 +60,7 @@ def main(query):
     if results[2]['shop_name'] == '':
         result = results[1]['shop_name'].split(' ')
         query = result[3]+' '+result[4]+' '+result[5]+' '+result[6]
-        main(query)
-        return
+        results = main(query)
+        return results
     else:
-        print(results)
-        
-if __name__ == "__main__":
-    query = input("Search Query: ")
-    main(query)
+        return results
