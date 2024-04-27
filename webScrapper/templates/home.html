@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps Scraper</title>
+  {% include 'bootstrap.html' %}
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Google Maps Scraper</h1>
+        <form action="/show_data" method="post">
+            <div class="row">
+                <div class="m-2 col-8">
+                    <input type="text" name="query" placeholder="Enter Search Query">
+                </div>
+                <input class="btn btn-primary col-3" type="submit">
+            </div>
+        </form>
+    </div>   
+</body>
+</html>

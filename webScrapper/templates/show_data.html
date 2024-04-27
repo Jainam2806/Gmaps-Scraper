@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>Google Maps Scraper</title>
+    {% include 'bootstrap.html' %}
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Google Maps Scraper</h1>
+    </div>
+    <div class="container row mx-auto">
+        <div class="col-11">
+            <form action="/download" method="post">
+                <button type="submit">Process and Download CSV</button>
+            </form>
+        </div>
+        <div class="col-1">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Shop Name</th>
+                    <th>Shop Address</th>
+                    <th>Shop Phone</th>
+                    <th>Whatsapp Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in results %}
+                <tr>
+                    <td>{{ i }}</td>
+                    <td>{{ results[i]['shop_name'] }}</td>
+                    <td>{{ results[i]['shop_address'] }}</td>
+                    <td>{{ results[i]['shop_phone'] }}</td>
+                    {% if results[i]['shop_phone'] is not none %}
+                    <td><a href="https://wa.me/91{{ results[i]['shop_phone'] }}" target="_blank">Whatsapp</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
