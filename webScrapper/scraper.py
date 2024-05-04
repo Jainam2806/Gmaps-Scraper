@@ -1,26 +1,30 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium import webdriver
+from webdriver.common.by import By
+from webdriver.common.service import Service
+from webdriver.common.keys import Keys
+from webdriver.manager.chrome import ChromeDriverManager
+from webdriver.chrome.options import Options as ChromeOptions
 
 def scrape_google_maps(query):
     chrome_options = ChromeOptions()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(options=chrome_options)
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage") 
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     driver.get("https://www.google.com/maps")
-    time.sleep(2)
+    time.sleep(1.5)
     
     search_box = driver.find_element(By.XPATH, '//*[@id="searchboxinput"]')
     search_box.send_keys(query)
     search_box.send_keys(Keys.ENTER)
-    time.sleep(2)
+    time.sleep(1.5)
     for _ in range(9):
         try:
             driver.execute_script(f"""document.querySelector('[aria-label="Results for {query}"]').scrollTop = document.querySelector('[aria-label="Results for {query}"]').scrollHeight;""")
         except:
             return(scrape_google_maps(query))
-        time.sleep(3)
+        time.sleep(2.5)
   
     results = []
     for i in range(3,102,2):
