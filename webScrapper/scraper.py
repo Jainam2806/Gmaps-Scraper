@@ -1,17 +1,19 @@
 import time
 from selenium import webdriver
-from webdriver.common.by import By
-from webdriver.common.service import Service
-from webdriver.common.keys import Keys
-from webdriver.manager.chrome import ChromeDriverManager
-from webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
 
 def scrape_google_maps(query):
-    chrome_options = ChromeOptions()
+    chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage") 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     driver.get("https://www.google.com/maps")
     time.sleep(1.5)
     
