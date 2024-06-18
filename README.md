@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 Run the script:
 ```bash
-python scraper.py
+python app.py
 ```
 
 Enter your search query when prompted.
